@@ -66,7 +66,7 @@ function createResponse(url: string, body: string | Object, status: number): Res
         body: body,
         status: status,
         statusText: "OK",
-        type: status === 200 ? ResponseType.Default : ResponseType.Error,
+        type: (status >= 200 && status <= 299) ? ResponseType.Default : ResponseType.Error,
         url: url
     }));
 }
